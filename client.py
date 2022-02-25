@@ -36,6 +36,7 @@ def inp():
             print('$ ', repr(msg))
     #close socket
     s.close()
+    
     def auto():
     import socket
      #get port from user and convert to int val
