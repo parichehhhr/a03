@@ -52,9 +52,9 @@ def inp():
     s.connect((host, port))
     #the loop to send 10 message   for test 
     #and print  Received messages
-    for x in range(10):
+    for x in range(100):
         st= "test"
-        if(x==9):
+        if(x==99):
             s.sendall(bytes("exit\n", "utf-8"))       
         else:
             s.sendall(bytes(st+ "\n", "utf-8"))
