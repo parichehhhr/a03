@@ -36,6 +36,33 @@ def inp():
             print('$ ', repr(msg))
     #close socket
     s.close()
+    def auto():
+    import socket
+     #get port from user and convert to int val
+    port = int(input ("Enter port :"))
+     #get  host server ip 
+    host = input("Enter host : ")
+    
+    #port = 9999
+    #host = "192.168.1.7"
+    flag = True
+    #creating the socket
+    s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    # connecting host 
+    s.connect((host, port))
+    #the loop to send 10 message   for test 
+    #and print  Received messages
+    for x in range(10):
+        st= "test"
+        if(x==9):
+            s.sendall(bytes("exit\n", "utf-8"))       
+        else:
+            s.sendall(bytes(st+ "\n", "utf-8"))
+            msg = s.recv(1024)
+            print('$ ', repr(msg))
+    s.close()
+
+
 
 
     
